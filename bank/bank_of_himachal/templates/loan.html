@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank of Himachal - Loan Section</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #343a40;
+    color: white;
+    position: fixed;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background-color: #007BFF;
+    text-align: center;
+}
+
+.sidebar-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.sidebar-menu li {
+    margin-bottom: 20px;
+}
+
+.sidebar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.sidebar-menu a:hover {
+    background-color: #007BFF;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.content-section {
+    margin-bottom: 40px;
+}
+
+.content-header h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.loan-overview {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.loan-card {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    width: 45%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.loan-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.loan-card p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.loan-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.loan-card form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.loan-card form input,
+.loan-card form select {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.loan-card .btn {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.loan-card .btn:hover {
+    background-color: #004494;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.repayment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.repayment-table th,
+.repayment-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.repayment-table th {
+    background-color: #007BFF;
+    color: white;
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Bank of Himachal</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#" id="dashboard-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="#" id="loan-link"><i class="fas fa-hand-holding-usd"></i> Loans</a></li>
+            <li><a href="#" id="transactions-link"><i class="fas fa-exchange-alt"></i> Transactions</a></li>
+            <li><a href="#" id="profile-link"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Loan Section -->
+        <section id="loan" class="content-section">
+            <div class="content-header">
+                <h2>Loans</h2>
+            </div>
+            <div class="loan-overview">
+                <div class="loan-card">
+                    <h3>Current Loan</h3>
+                    <p>Loan Amount: &#8377; 5,00,000.00</p>
+                    <p>Loan Type: Home Loan</p>
+                    <p>Interest Rate: 7.5% per annum</p>
+                    <p>Repayment Tenure: 10 Years</p>
+                    <button id="repayment-schedule-btn" class="btn">View Repayment Schedule</button>
+                </div>
+                <div class="loan-card">
+                    <h3>Apply for a New Loan</h3>
+                    <form id="loan-application-form">
+                        <label for="loan-type">Loan Type:</label>
+                        <select id="loan-type" name="loan-type" required>
+                            <option value="personal-loan">Personal Loan</option>
+                            <option value="home-loan">Home Loan</option>
+                            <option value="education-loan">Education Loan</option>
+                            <option value="auto-loan">Auto Loan</option>
+                        </select>
+                        
+                        <label for="loan-amount">Loan Amount (&#8377;):</label>
+                        <input type="number" id="loan-amount" name="loan-amount" required>
+                        
+                        <label for="tenure">Repayment Tenure (Years):</label>
+                        <input type="number" id="tenure" name="tenure" required>
+                        
+                        <label for="income">Annual Income (&#8377;):</label>
+                        <input type="number" id="income" name="income" required>
+                        
+                        <button type="submit" class="btn">Apply Now</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Repayment Schedule Modal -->
+            <div id="repayment-schedule-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>Repayment Schedule</h3>
+                    <table class="repayment-table">
+                        <thead>
+                            <tr>
+                                <th>Month</th>
+                                <th>Principal (&#8377;)</th>
+                                <th>Interest (&#8377;)</th>
+                                <th>Total Payment (&#8377;)</th>
+                                <th>Remaining Balance (&#8377;)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example Data, to be dynamically filled -->
+                            <tr>
+                                <td>1</td>
+                                <td>4,167.00</td>
+                                <td>3,125.00</td>
+                                <td>7,292.00</td>
+                                <td>4,95,833.00</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>4,167.00</td>
+                                <td>3,102.50</td>
+                                <td>7,269.50</td>
+                                <td>4,91,666.00</td>
+                            </tr>
+                            <!-- More rows can be added programmatically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

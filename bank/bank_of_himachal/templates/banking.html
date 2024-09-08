@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank of Himachal - Online Banking</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.main-content {
+    width: 90%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.content-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content-header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.banking-overview {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.account-summary, .money-transfer, .bill-payment, .transaction-history {
+    width: 48%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.account-summary h3, .money-transfer h3, .bill-payment h3, .transaction-history h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.account-details .account {
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.account p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input, form select {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.transaction-table th, .transaction-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.transaction-table th {
+    background-color: #007BFF;
+    color: white;
+}
+
+.transaction-table td {
+    background-color: #f9f9f9;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Online Banking Section -->
+        <section id="online-banking-section">
+            <div class="content-header">
+                <h2>Online Banking</h2>
+            </div>
+            <div class="banking-overview">
+                <!-- Account Summary -->
+                <div class="account-summary">
+                    <h3>Account Summary</h3>
+                    <div class="account-details">
+                        <div class="account">
+                            <p>Account Number: **** **** **** 1234</p>
+                            <p>Account Type: Savings</p>
+                            <p>Balance: &#8377; 75,000</p>
+                        </div>
+                        <div class="account">
+                            <p>Account Number: **** **** **** 5678</p>
+                            <p>Account Type: Current</p>
+                            <p>Balance: &#8377; 1,20,000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Money Transfer -->
+                <div class="money-transfer">
+                    <h3>Transfer Money</h3>
+                    <form id="money-transfer-form">
+                        <label for="from-account">From Account:</label>
+                        <select id="from-account" name="from-account">
+                            <option value="1234">**** 1234 (Savings)</option>
+                            <option value="5678">**** 5678 (Current)</option>
+                        </select>
+
+                        <label for="to-account">To Account:</label>
+                        <input type="text" id="to-account" name="to-account" placeholder="Enter Beneficiary Account Number">
+
+                        <label for="amount">Amount (&#8377;):</label>
+                        <input type="number" id="amount" name="amount" placeholder="Enter amount to transfer">
+
+                        <button type="submit" class="btn">Transfer Now</button>
+                    </form>
+                </div>
+
+                <!-- Bill Payment -->
+                <div class="bill-payment">
+                    <h3>Pay Bills</h3>
+                    <form id="bill-payment-form">
+                        <label for="bill-type">Select Bill Type:</label>
+                        <select id="bill-type" name="bill-type">
+                            <option value="electricity">Electricity</option>
+                            <option value="water">Water</option>
+                            <option value="internet">Internet</option>
+                            <option value="mobile">Mobile Recharge</option>
+                        </select>
+
+                        <label for="amount-bill">Amount (&#8377;):</label>
+                        <input type="number" id="amount-bill" name="amount-bill" placeholder="Enter bill amount">
+
+                        <button type="submit" class="btn">Pay Now</button>
+                    </form>
+                </div>
+
+                <!-- Transaction History -->
+                <div class="transaction-history">
+                    <h3>Transaction History</h3>
+                    <table class="transaction-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Amount (&#8377;)</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024-08-25</td>
+                                <td>Money Transfer to **** 5678</td>
+                                <td>-15,000</td>
+                                <td>Success</td>
+                            </tr>
+                            <tr>
+                                <td>2024-08-20</td>
+                                <td>Electricity Bill Payment</td>
+                                <td>-2,500</td>
+                                <td>Success</td>
+                            </tr>
+                            <tr>
+                                <td>2024-08-15</td>
+                                <td>Salary Credit</td>
+                                <td>+50,000</td>
+                                <td>Success</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

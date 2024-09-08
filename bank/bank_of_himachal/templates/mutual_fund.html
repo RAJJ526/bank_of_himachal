@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Fund Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    color: #004aad;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.submit-btn {
+    background-color: #004aad;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #003580;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Apply for a Mutual Fund</h1>
+        <form action="#" method="post" class="mutual-fund-form">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="investment">Investment Amount:</label>
+                <input type="number" id="investment" name="investment" required>
+            </div>
+            <div class="form-group">
+                <label for="plan">Select a Plan:</label>
+                <select id="plan" name="plan" required>
+                    <option value="equity">Equity Fund</option>
+                    <option value="debt">Debt Fund</option>
+                    <option value="balanced">Balanced Fund</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="agree">
+                    <input type="checkbox" id="agree" name="agree" required>
+                    I agree to the terms and conditions.
+                </label>
+            </div>
+            <button type="submit" class="submit-btn">Apply Now</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank of Himachal - Credit Card Section</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.main-content {
+    width: 80%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.content-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content-header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.credit-card-overview {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.credit-card, .apply-new-card {
+    width: 48%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.credit-card h3, .apply-new-card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card {
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.apply-new-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.apply-new-card form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.apply-new-card form input, .apply-new-card form select {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Credit Card Section -->
+        <section id="credit-card-section">
+            <div class="content-header">
+                <h2>Credit Cards</h2>
+            </div>
+            <div class="credit-card-overview">
+                <div class="credit-card">
+                    <h3>Your Credit Cards</h3>
+                    <div class="card">
+                        <p>Card Number: **** **** **** 1234</p>
+                        <p>Card Type: Platinum</p>
+                        <p>Credit Limit: &#8377; 2,00,000</p>
+                        <p>Available Credit: &#8377; 1,50,000</p>
+                        <button class="btn">View Details</button>
+                    </div>
+                    <div class="card">
+                        <p>Card Number: **** **** **** 5678</p>
+                        <p>Card Type: Gold</p>
+                        <p>Credit Limit: &#8377; 1,00,000</p>
+                        <p>Available Credit: &#8377; 50,000</p>
+                        <button class="btn">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Apply for New Credit Card -->
+                <div class="apply-new-card">
+                    <h3>Apply for a New Credit Card</h3>
+                    <form id="credit-card-application-form">
+                        <label for="card-type">Select Card Type:</label>
+                        <select id="card-type" name="card-type">
+                            <option value="platinum">Platinum</option>
+                            <option value="gold">Gold</option>
+                            <option value="silver">Silver</option>
+                        </select>
+
+                        <label for="annual-income">Annual Income (&#8377;):</label>
+                        <input type="number" id="annual-income" name="annual-income" placeholder="Enter your annual income">
+
+                        <label for="existing-debt">Existing Debt (&#8377;):</label>
+                        <input type="number" id="existing-debt" name="existing-debt" placeholder="Enter your existing debt">
+
+                        <button type="submit" class="btn">Apply Now</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

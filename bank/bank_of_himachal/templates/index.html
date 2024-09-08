@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank of Himachal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #343a40;
+    color: white;
+    position: fixed;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background-color: #007BFF;
+    text-align: center;
+}
+
+.sidebar-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.sidebar-menu li {
+    margin-bottom: 20px;
+}
+
+.sidebar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.sidebar-menu a:hover {
+    background-color: #007BFF;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.content-section {
+    margin-bottom: 40px;
+}
+
+.content-header h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    width: 30%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 18px;
+}
+
+.transaction-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.transaction-list li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.services {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: #f8f9fa;
+    padding: 20px;
+    width: 30%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.service-card .btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transactions-table th,
+.transactions-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+   
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Bank of Himachal</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#" id="dashboard-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="#" id="services-link"><i class="fas fa-concierge-bell"></i> Services</a></li>
+            <li><a href="#" id="transactions-link"><i class="fas fa-exchange-alt"></i> Transactions</a></li>
+            <li><a href="#" id="profile-link"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Dashboard -->
+        <section id="dashboard" class="content-section">
+            <div class="content-header">
+                <h2>Dashboard</h2>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <h3>Account Balance</h3>
+                    <p>&#8377; 1,25,000.00</p>
+                </div>
+                <div class="card">
+                    <h3>Recent Transactions</h3>
+                    <ul class="transaction-list">
+                        <li>Amazon - &#8377; 999.00</li>
+                        <li>Flipkart - &#8377; 1,499.00</li>
+                        <li>UPI Payment - &#8377; 2,500.00</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Loan Status</h3>
+                    <p>Home Loan: Active</p>
+                    <p>Car Loan: Paid</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="content-section">
+            <div class="content-header">
+                <h2>Services</h2>
+            </div>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Online Banking</h3>
+                    <p>Manage your accounts and transactions online.</p>
+                    <a href="/banking"><button class="btn">Explore</button></a>
+                </div>
+                <div class="service-card">
+                    <h3>Loans</h3>
+                    <p>Apply for personal, home, and business loans.</p>
+                    <a href="/loan"><button class="btn">Apply Now</button></a>
+                </div>
+                <div class="service-card">
+                    <h3>Credit Cards</h3>
+                    <p>Choose from a range of credit cards with benefits.</p>
+                    <a href="/credit_card"> <button class="btn">Get a Card</button></a>
+                </div>
+                <div class="service-card">
+                    <h3>Insurance</h3>
+                    <p>Protect your future with our insurance plans.</p>
+                    <a href="/insurance"> <button class="btn">Get Insured</button></a>
+                </div>
+                <div class="service-card">
+                    <h3>Mutual Fund</h3>
+                    <p>Start investing in mutual funds</p>
+                    <a href="/mutual_fund"> <button class="btn">Start Investing</button></a>
+                </div>
+                <div class="service-card">
+                    <h3>Business Account</h3>
+                    <p>Create your business acccount</p>
+                    <a href="/business_account"> <button class="btn">Create Account</button></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transactions -->
+        <section id="transactions" class="content-section">
+            <div class="content-header">
+                <h2>Transactions</h2>
+            </div>
+            <table class="transactions-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01 Sep 2024</td>
+                        <td>Amazon</td>
+                        <td>-&#8377; 999.00</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>31 Aug 2024</td>
+                        <td>Flipkart</td>
+                        <td>-&#8377; 1,499.00</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>30 Aug 2024</td>
+                        <td>UPI Payment</td>
+                        <td>-&#8377; 2,500.00</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>29 Aug 2024</td>
+                        <td>Salary</td>
+                        <td>+&#8377; 50,000.00</td>
+                        <td>Received</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Profile -->
+        <section id="profile" class="content-section">
+            <div class="content-header">
+                <h2>Profile</h2>
+            </div>
+            <div class="profile-info">
+                <h3>Personal Information</h3>
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Email:</strong> johndoe@example.com</p>
+                <p><strong>Phone:</strong> +91 9876543210</p>
+                <p><strong>Address:</strong> Shimla, Himachal Pradesh</p>
+                <button class="btn">Edit Profile</button>
+            </div>
+        </section>
+    </div>
+    <script src="scripts.js"> </script>
+        
+   
+</body>
+</html>
